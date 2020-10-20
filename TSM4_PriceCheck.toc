@@ -1,0 +1,18 @@
+## Interface: 90001
+## Title: TSM4_PriceCheck
+## Author: Jabouty
+## Version: 1.0
+## RequiredDeps: TradeSkillMaster
+## SavedVariables: TSM4_PriceCheck
+
+# Load Libraries
+TSM4_PriceCheck.xml
+
+# Load Locales
+locales\locales.xml
+
+# Load Modules
+modules\modules.xml
+
+# Load Main File
+TSM4_PriceCheck.lua
