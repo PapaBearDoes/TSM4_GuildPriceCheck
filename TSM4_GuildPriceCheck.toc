@@ -6,13 +6,13 @@
 ## SavedVariables: TSM4_PriceCheck
 
 # Load Libraries
-  TSM4_GuildPriceCheck.xml
+TSM4_GuildPriceCheck.xml
 
 # Load Locales
-  locales\locales.xml
+locales\locales.xml
 
 # Load Modules
-  modules\modules.xml
+modules\modules.xml
 
 # Load Main File
-  TSM4_GuildPriceCheck.lua
+TSM4_GuildPriceCheck.lua
