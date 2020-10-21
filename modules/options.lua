@@ -1,12 +1,12 @@
-local TSM4_PC = select(2, ...)
-local TSM4_PC = LibStub("AceAddon-3.0"):NewAddon(TSM4_PC, "TSM4_PriceCheck", "AceConsole-3.0", "AceEvent-3.0")
---local L = LibStub("AceLocale-3.0"):GetLocale("TSM4_PriceCheck")
-local L = LibStub("AceLocale-3.0"):NewLocale("TSM_PriceCheck", "enUS", true)
+local TSM4_GPC = select(2, ...)
+local TSM4_GPC = LibStub("AceAddon-3.0"):NewAddon(TSM4_GPC, "TSM4_GuildPriceCheck", "AceConsole-3.0", "AceEvent-3.0")
+--local L = LibStub("AceLocale-3.0"):GetLocale("TSM4_GuildPriceCheck")
+local L = LibStub("AceLocale-3.0"):NewLocale("TSM4_GuildPriceCheck", "enUS", true)
 
-local Opts = TSM4_PC:NewModule("Opts", "AceConsole-3.0")
+local Opts = TSM4_GPC:NewModule("Opts", "AceConsole-3.0")
 
 function Opts:OnInitialize()
-    self.db = LibStub("AceDB-3.0"):New("TSM4_PriceCheck")
+    self.db = LibStub("AceDB-3.0"):New("TSM4_GuildPriceCheck")
 end
 
 function Opts:SetTrigger(info, input)
@@ -16,7 +16,7 @@ end
 
 function Opts:SetEnableAddon(info, input)
 		self.db.global.AddonEnabled = true
-		print("PriceCheck is now enabled")
+		print("GuildPriceCheck is now enabled")
 end
 
 function Opts:GetAddonEnabled(info)
@@ -25,7 +25,7 @@ end
 
 function Opts:SetDisableAddon(info, input)
 		self.db.global.AddonEnabled = false
-		print("PriceCheck is now disabled")
+		print("GuildPriceCheck is now disabled")
 end
 
 function Opts:SetRaidIcon(info, input)
@@ -98,7 +98,7 @@ function Opts:SetOfficerChannel(info, input)
 end
 
 local options = {
-    name = "TSM4_PriceCheck",
+    name = "TSM4_GuildPriceCheck",
     handler = Opts,
     type = 'group',
     args = {
@@ -173,4 +173,4 @@ local options = {
     },
 }
 
-LibStub("AceConfig-3.0"):RegisterOptionsTable("TSM4_PriceCheck", options, {"pc"})
+LibStub("AceConfig-3.0"):RegisterOptionsTable("TSM4_GuildPriceCheck", options, {"pc"})

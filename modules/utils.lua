@@ -1,8 +1,8 @@
-local TSM4_PC = select(2, ...)
---local L = LibStub("AceLocale-3.0"):GetLocale("TSM4_PriceCheck")
-local L = LibStub("AceLocale-3.0"):NewLocale("TSM_PriceCheck", "enUS", true)
+local TSM4_GPC = select(2, ...)
+--local L = LibStub("AceLocale-3.0"):GetLocale("TSM4_GuildPriceCheck")
+local L = LibStub("AceLocale-3.0"):NewLocale("TSM4_GuildPriceCheck", "enUS", true)
 
-local Util = TSM4_PC:NewModule("Utils")
+local Util = TSM4_GPC:NewModule("Utils")
 
 function Util:ConvertPriceToMoney(price, currency)
 	local amount
@@ -32,7 +32,7 @@ end
 
 function Util:LastRunCheck()
 	local Current = time()
-	local Past = (TSM4_PC.LastRunDelayTime + TSM4_PC.db.global["LockOutTime"])
+	local Past = (TSM4_GPC.LastRunDelayTime + TSM4_GPC.db.global["LockOutTime"])
 	if Current > Past then
 		return "Yes"
 	else
@@ -48,7 +48,7 @@ function Util:StartsWith(String,Start)
    return string.sub(String,1,string.len(Start))==Start
 end
 
-function TSM4_PC:TriggeredEvent(message, recipient, channel)
+function TSM4_GPC:TriggeredEvent(message, recipient, channel)
 	Util:Process(message, recipient, channel)
 end
 
@@ -68,16 +68,16 @@ function Util:ValuesFor(marketPrice, marketName, itemCount)
 	local gold = ","
 	local copper = ""
 
-	if TSM4_PC.db.global["UseRaidIcon"] then
+	if TSM4_GPC.db.global["UseRaidIcon"] then
 		icon = "g{rt2}"
 	end
 
-	if not TSM4_PC.db.global["ShowBrackets"] then
+	if not TSM4_GPC.db.global["ShowBrackets"] then
 		leftBracket = ": "
 		rightBracket = ""
 	end
 
-	if TSM4_PC.db.global["ShowCopper"] then
+	if TSM4_GPC.db.global["ShowCopper"] then
 		if itemCount > 1 then
 			copper = multipliedMarketCopper
 		else
@@ -86,7 +86,7 @@ function Util:ValuesFor(marketPrice, marketName, itemCount)
 
 		gold = "g"
 
-		if TSM4_PC.db.global["UseRaidIcon"] then
+		if TSM4_GPC.db.global["UseRaidIcon"] then
 			icon = "c{rt2}"
 		else
 			icon = "c"
@@ -104,19 +104,19 @@ end
 
 function Util:SendMessage(message, recipient, channel)
 	if channel == "Guild" then
-		if TSM4_PC.db.global["GuildChannel"] == "None" then return end
-		SendChatMessage(message, TSM4_PC.db.global["GuildChannel"], "Common", recipient)
+		if TSM4_GPC.db.global["GuildChannel"] == "None" then return end
+		SendChatMessage(message, TSM4_GPC.db.global["GuildChannel"], "Common", recipient)
 	elseif channel == "Whisper" then
 		SendChatMessage(message, "WHISPER", "Common", recipient)
 	elseif channel == "Officer" then
-		if TSM4_PC.db.global["OfficerChannel"] == "None" then return end
-		SendChatMessage(message, TSM4_PC.db.global["OfficerChannel"], "Common", recipient)
+		if TSM4_GPC.db.global["OfficerChannel"] == "None" then return end
+		SendChatMessage(message, TSM4_GPC.db.global["OfficerChannel"], "Common", recipient)
 	elseif channel == "Party" then
 		if TSM4_PC.db.global["PartyChannel"] == "None" then return end
-		SendChatMessage(message, TSM4_PC.db.global["PartyChannel"], "Common", recipient)
+		SendChatMessage(message, TSM4_GPC.db.global["PartyChannel"], "Common", recipient)
 	elseif channel == "Say" then
-		if TSM4_PC.db.global["Channel"] == "None" then return end
-		SendChatMessage(message, TSM4_PC.db.global["Channel"], "Common", recipient)
+		if TSM4_GPC.db.global["Channel"] == "None" then return end
+		SendChatMessage(message, TSM4_GPC.db.global["Channel"], "Common", recipient)
 	elseif channel == "BNET" then
 		BNSendWhisper(recipient, message)
 	end

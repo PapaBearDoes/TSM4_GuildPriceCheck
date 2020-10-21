@@ -1,12 +1,12 @@
 ## Interface: 90001
-## Title: TSM4_PriceCheck
+## Title: TSM4_GuildPriceCheck
 ## Author: Jabouty
 ## Version: 1.0
 ## RequiredDeps: TradeSkillMaster
 ## SavedVariables: TSM4_PriceCheck
 
 # Load Libraries
-  TSM4_PriceCheck.xml
+  TSM4_GuildPriceCheck.xml
 
 # Load Locales
   locales\locales.xml
@@ -15,4 +15,4 @@
   modules\modules.xml
 
 # Load Main File
-  TSM4_PriceCheck.lua
+  TSM4_GuildPriceCheck.lua
