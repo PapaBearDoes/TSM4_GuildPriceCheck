@@ -1,4 +1,4 @@
-package-as: TSM4_PriceCheck
+package-as: TSM4_GuildPriceCheck
 
 externals:
   libs/LibStub: https://repos.curseforge.com/wow/libstub/trunk

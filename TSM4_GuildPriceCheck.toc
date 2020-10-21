@@ -3,7 +3,7 @@
 ## Author: Jabouty
 ## Version: 1.0
 ## RequiredDeps: TradeSkillMaster
-## SavedVariables: TSM4_PriceCheck
+## SavedVariables: TSM4_GuildPriceCheck
 
 # Load Libraries
 TSM4_GuildPriceCheck.xml

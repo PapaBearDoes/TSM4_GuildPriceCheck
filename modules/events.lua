@@ -69,7 +69,7 @@ function Util:Process(message, recipient, channel)
 			Util:SendMessage(Util:ValuesFor(priceMin, TSM4_GPC.db.global["MinText"], itemCount), recipient, channel)
 		end
 
-		TSM4_PC.LastRunDelayTime = time()
+		TSM4_GPC.LastRunDelayTime = time()
 	else
 		return
 	end

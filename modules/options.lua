@@ -106,14 +106,14 @@ local options = {
         trigger = {
             type = 'input',
             name = 'Trigger',
-            desc = '/pc trigger triggerkey',
+            desc = '/gpc trigger triggerkey',
             set = 'SetTrigger',
         },
 				--AddonEnabled
 				enable = {
 						type = 'toggle',
 						name = 'Enable Addon',
-						desc = '/pc enable',
+						desc = '/gpc enable',
 						set = 'SetEnableAddon',
 						get = 'GetAddonEnabled',
 				},
@@ -121,7 +121,7 @@ local options = {
 				disable = {
 						type = 'toggle',
 						name = 'Disable Addon',
-						desc = '/pc disable',
+						desc = '/gpc disable',
 						set = 'SetDisableAddon',
 						get = 'GetAddonEnabled',
 				},
@@ -129,7 +129,7 @@ local options = {
 				useraidicon = {
 						type = 'toggle',
 						name = 'Use Raid Icon',
-						desc = '/pc useraidicon',
+						desc = '/gpc useraidicon',
 						set = 'SetRaidIcon',
 						get = 'GetRaidIcon',
 				},
@@ -137,7 +137,7 @@ local options = {
 				showcopper = {
 						type = 'toggle',
 						name = 'Show Copper on prices',
-						desc = '/pc showcopper',
+						desc = '/gpc showcopper',
 						set = 'SetShowCopper',
 						get = 'GetShowCopper',
 				},
@@ -145,7 +145,7 @@ local options = {
 				showbrackets = {
 						type = 'toggle',
 						name = 'Show brackets around prices',
-						desc = '/pc showbrackets',
+						desc = '/gpc showbrackets',
 						set = 'SetShowBrackets',
 						get = 'GetShowBrackets'
 				},
@@ -153,24 +153,24 @@ local options = {
 				guildchannel = {
 						type = 'input',
 						name = 'Channel to reply for guild messages',
-						desc = '/pc guild CHANNEL',
+						desc = '/gpc guildchannel CHANNEL',
 						set = 'SetGuildChannel',
 				},
 				--PartyChannel
 				partychannel = {
 						type = 'input',
 						name = 'Channel to reply for party messages',
-						desc = '/pc party CHANNEL',
+						desc = '/gpc partychannel CHANNEL',
 						set = 'SetPartyChannel',
 				},
 				--OfficerChannel
 				officerchannel = {
 						type = 'input',
 						name = 'Channel to reply for officer messages',
-						desc = '/pc officer CHANNEL',
+						desc = '/gpc officerchannel CHANNEL',
 						set = 'SetOfficerChannel',
 				},
     },
 }
 
-LibStub("AceConfig-3.0"):RegisterOptionsTable("TSM4_GuildPriceCheck", options, {"pc"})
+LibStub("AceConfig-3.0"):RegisterOptionsTable("TSM4_GuildPriceCheck", options, {"gpc"})

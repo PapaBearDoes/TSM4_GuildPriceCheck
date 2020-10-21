@@ -112,7 +112,7 @@ function Util:SendMessage(message, recipient, channel)
 		if TSM4_GPC.db.global["OfficerChannel"] == "None" then return end
 		SendChatMessage(message, TSM4_GPC.db.global["OfficerChannel"], "Common", recipient)
 	elseif channel == "Party" then
-		if TSM4_PC.db.global["PartyChannel"] == "None" then return end
+		if TSM4_GPC.db.global["PartyChannel"] == "None" then return end
 		SendChatMessage(message, TSM4_GPC.db.global["PartyChannel"], "Common", recipient)
 	elseif channel == "Say" then
 		if TSM4_GPC.db.global["Channel"] == "None" then return end
