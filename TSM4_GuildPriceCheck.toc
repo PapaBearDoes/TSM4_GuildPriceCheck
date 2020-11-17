@@ -1,4 +1,4 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: TSM4_GuildPriceCheck
 ## Author: Jabouty
 ## Version: 1.0
